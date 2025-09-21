@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock • Paper • Scissors</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-banner">
+    <h1>Rock • Paper • Scissors</h1>
+
+    <!-- Nav -->
+    <nav>
+      <ul class="nav-list">
+        <li><a href="https://www.linkedin.com/in/dhruvi-kadhiwala-b22b47251" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Google</a></li>
+        <li><a href="https://testudo.umd.edu/" target="_blank" rel="noopener noreferrer">Testudo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Body -->
+  <main class="content">
+    <!-- Main Content -->
+    <section class="main">
+      <h2>Play the Game</h2>
+      <form action="#" method="get" class="play-form">
+        <div class="form-row">
+          <label for="playerName">Name:</label>
+          <input type="text" id="playerName" name="playerName" placeholder="Enter your name" required/>
+        </div>
+
+        <div class="form-row">
+          <label for="choice">Your Choice:</label>
+          <select id="choice" name="choice">
+            <option>Rock</option>
+            <option>Paper</option>
+            <option>Scissors</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="result"></div> <!-- Result will display here -->
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>How to Play</h3>
+      <ol class="rules">
+        <li>Rock beats Scissors</li>
+        <li>Paper beats Rock</li>
+        <li>Scissors beats Paper</li>
+        <li>Same choice = Draw</li>
+      </ol>
+      <p class="tip">Hover over this sidebar to see the background change.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-banner">
+    <p>Thanks for visiting!</p>
+  </footer>
+
+  <!-- JavaScript for Game Logic -->
+  <script>
+    const form = document.querySelector(".play-form");
+    const resultDiv = document.getElementById("result");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // stop page reload
+
+      const playerName = document.getElementById("playerName").value.trim();
+      const playerChoice = document.getElementById("choice").value;
+
+      // Computer randomly picks Rock, Paper, or Scissors
+      const options = ["Rock", "Paper", "Scissors"];
+      const computerChoice = options[Math.floor(Math.random() * options.length)];
+
+      let result = "";
+      if (playerChoice === computerChoice) {
+        result = "It's a Tie!";
+      } else if (
+        (playerChoice === "Rock" && computerChoice === "Scissors") ||
+        (playerChoice === "Paper" && computerChoice === "Rock") ||
+        (playerChoice === "Scissors" && computerChoice === "Paper")
+      ) {
+        result = `${playerName} Wins! 🎉`;
+      } else {
+        result = `${playerName} Loses 😢`;
+      }
+
+      // Clear old result, then show new one
+      resultDiv.textContent = `You chose ${playerChoice}, computer chose ${computerChoice}. → ${result}`;
+    });
+  </script>
+</body>
+</html>

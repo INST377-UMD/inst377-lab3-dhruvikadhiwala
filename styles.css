@@ -1,0 +1,167 @@
+/* External CSS File */
+
+/* Global / Body */
+:root{
+    --bg: #f7f8fc;
+    --ink: #1e293b;
+    --accent: #3b82f6;
+    --banner-bg: #0f172a;
+    --banner-ink: #ffffff;
+    --sidebar-bg: #fff4d6;
+    --sidebar-hover: #ffe7a3;
+    --card-bg: #ffffff;
+  }
+  
+  *{ box-sizing: border-box; }
+  
+  html, body{
+    height: 100%;
+  }
+  
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Trebuchet MS","Segoe UI",Arial,sans-serif; /* Custom font-family */
+    text-align: center; /* Center text across the page */
+  }
+  
+  /* Header + Footer share same styling via .site-banner */
+  .site-banner{
+    background: var(--banner-bg);
+    color: var(--banner-ink);
+    padding: 24px;
+    margin: 16px 0;             /* Margin + Padding requirement */
+  }
+  
+  .site-banner h1{
+    margin: 0 0 12px;
+    font-size: 2rem;
+  }
+  
+  /* Nav */
+  .nav-list{
+    list-style: none;            /* No bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;               /* Horizontal alignment */
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .nav-list a{
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--banner-ink);
+    border-radius: 8px;
+    transition: transform .15s ease, background-color .15s ease;
+  }
+  
+  .nav-list a:hover{             /* Hover state */
+    background: rgba(255,255,255,.15);
+    transform: translateY(-1px);
+  }
+  
+  /* Layout: Main + Sidebar on one line */
+  .content{
+    display: flex;
+    gap: 16px;
+    width: min(1100px, 92%);
+    margin: 0 auto 24px;
+    align-items: flex-start;
+  }
+  
+  /* Main section uses percentage width */
+  .main{
+    width: 68%;                  /* Percentage width */
+    background: var(--card-bg);
+    padding: 20px;               /* Margin + Padding */
+    margin: 8px 0;               /* Margin + Padding */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  
+  /* Sidebar uses percentage width and different color */
+  .sidebar{
+    width: 32%;                  /* Percentage width */
+    background: var(--sidebar-bg); /* Color different from rest of the page */
+    padding: 20px;               /* Margin + Padding */
+    margin: 8px 0;               /* Margin + Padding */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    transition: background-color .2s ease; /* Hover transition */
+  }
+  
+  .sidebar:hover{                 /* Hover changes background color */
+    background: var(--sidebar-hover);
+  }
+  
+  .rules{
+    text-align: left;
+    display: inline-block; /* keeps the list narrower while body text is centered */
+    margin: 0 auto 12px;
+    padding-left: 20px;
+  }
+  
+  /* Form */
+  .play-form{
+    display: grid;
+    gap: 12px;
+    justify-items: center;
+  }
+  
+  .form-row{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    gap: 10px;
+    width: min(520px, 100%);
+    text-align: left; /* keep labels/inputs readable */
+  }
+  
+  label{
+    font-weight: bold;
+  }
+  
+  input[type="text"]{
+    width: 220px;                       /* Base width */
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    transition: width .25s ease;        /* Focus animation */
+  }
+  
+  input[type="text"]:focus{
+    outline: none;
+    width: 320px;                       /* Increase width on focus */
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+  }
+  
+  select{
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+  }
+  
+  button{
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  
+  button:hover{
+    transform: translateY(-1px);
+    opacity: .95;
+  }
+  
+  /* Footer text tweaks */
+  footer p{
+    margin: 0;
+    font-size: .95rem;
+  }  
