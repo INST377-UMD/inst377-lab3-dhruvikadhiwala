@@ -1,0 +1,163 @@
+:root{
+    --bg: #f7f8fc;
+    --ink: #1e293b;
+    --accent: #3b82f6;
+    --banner-bg: #0f172a;
+    --banner-ink: #ffffff;
+    --sidebar-bg: #fff4d6;
+    --sidebar-hover: #ffe7a3;
+    --card-bg: #ffffff;
+  }
+  
+  *{ box-sizing: border-box; }
+  
+  html, body{
+    height: 100%;
+  }
+  
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Trebuchet MS","Segoe UI",Arial,sans-serif; 
+    text-align: center; 
+  }
+  
+ 
+  .site-banner{
+    background: var(--banner-bg);
+    color: var(--banner-ink);
+    padding: 24px;
+    margin: 16px 0;             
+  }
+  
+  .site-banner h1{
+    margin: 0 0 12px;
+    font-size: 2rem;
+  }
+  
+  
+  .nav-list{
+    list-style: none;            
+    padding: 0;
+    margin: 0;
+    display: flex;               
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .nav-list a{
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--banner-ink);
+    border-radius: 8px;
+    transition: transform .15s ease, background-color .15s ease;
+  }
+  
+  .nav-list a:hover{             
+    background: rgba(255,255,255,.15);
+    transform: translateY(-1px);
+  }
+  
+  
+  .content{
+    display: flex;
+    gap: 16px;
+    width: min(1100px, 92%);
+    margin: 0 auto 24px;
+    align-items: flex-start;
+  }
+  
+  
+  .main{
+    width: 68%;                  
+    background: var(--card-bg);
+    padding: 20px;               
+    margin: 8px 0;               
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  
+  
+  .sidebar{
+    width: 32%;                  
+    background: var(--sidebar-bg); 
+    padding: 20px;               
+    margin: 8px 0;               
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    transition: background-color .2s ease; 
+  }
+  
+  .sidebar:hover{                 
+    background: var(--sidebar-hover);
+  }
+  
+  .rules{
+    text-align: left;
+    display: inline-block; 
+    margin: 0 auto 12px;
+    padding-left: 20px;
+  }
+  
+  /* Form */
+  .play-form{
+    display: grid;
+    gap: 12px;
+    justify-items: center;
+  }
+  
+  .form-row{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    gap: 10px;
+    width: min(520px, 100%);
+    text-align: left; 
+  }
+  
+  label{
+    font-weight: bold;
+  }
+  
+  input[type="text"]{
+    width: 220px;                       
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    transition: width .25s ease;        
+  }
+  
+  input[type="text"]:focus{
+    outline: none;
+    width: 320px;                      
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+  }
+  
+  select{
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+  }
+  
+  button{
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  
+  button:hover{
+    transform: translateY(-1px);
+    opacity: .95;
+  }
+  
+  footer p{
+    margin: 0;
+    font-size: .95rem;
+  }  
